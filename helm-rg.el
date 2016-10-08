@@ -30,7 +30,7 @@
 
 (defun helm-rg--candidates-process ()
   (let* ((query helm-pattern)
-         (cmd-args (list "rg" "--vimgrep" query))
+         (cmd-args (list "rg" "--vimgrep --no-heading" query))
          (proc (apply 'start-file-process "helm-rg" nil cmd-args)))
     (prog1 proc
       (set-process-sentinel
